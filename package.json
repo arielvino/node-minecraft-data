@@ -10,7 +10,7 @@
     "test:types": "tsc typings/test-typings && node typings/test-typings.js",
     "test": "npm run generate:types && npm run generate:data && npm run lint && npm run test:types && mocha",
     "lint": "standard",
-    "prepare": "npm run generate:data && npm run generate:types",
+    "prepare": "node ./bin/fetch_data.js && npm run generate:data && npm run generate:types",
     "fix": "standard --fix"
   },
   "standard": {
@@ -41,5 +41,9 @@
     "standard": "^17.0.0",
     "typescript": "~5.9.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "minecraftData": {
+    "repository": "https://github.com/arielvino/minecraft-data.git",
+    "commit": "484f622bf24f42b0f67865d68071a771c6780c54"
+  }
 }
